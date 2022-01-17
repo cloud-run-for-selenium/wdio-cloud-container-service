@@ -1,6 +1,6 @@
 {
   "name": "wdio-cloud-container-service",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This WebdriverIO service triggers a cloud run service, or other container-based cloud container service on any platform. Examples include Google Cloud Run and Heroku. The service performs the trigger, and a health check, by requesting the /status endpoint of a WebDriver or Selenium Grid and then retrying the requests until the service returns ready and a 2xx or 3xx response code.",
   "main": "index.js",
   "scripts": {
