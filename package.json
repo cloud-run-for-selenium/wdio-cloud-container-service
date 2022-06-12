@@ -1,10 +1,10 @@
 {
   "name": "wdio-cloud-container-service",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This WebdriverIO service triggers a cloud run service, or other container-based cloud container service on any platform. Examples include Google Cloud Run and Heroku. The service performs the trigger, and a health check, by requesting the /status endpoint of a WebDriver or Selenium Grid and then retrying the requests until the service returns ready and a 2xx or 3xx response code.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*.spec.js"
   },
   "keywords": [
     "WebdriverIO",
@@ -16,11 +16,16 @@
   ],
   "author": "James Mortensen",
   "license": "MIT",
+  "homepage": "https://github.com/cloud-run-for-selenium/wdio-cloud-container-service/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloud-run-for-selenium/wdio-cloud-container-service.git"
+  },
   "dependencies": {
-    "@wdio/logger": "^7.16.0"
+    "@wdio/logger": "^7.19.0"
   },
   "devDependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^9.1.4"
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
   }
 }
