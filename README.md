@@ -37,7 +37,7 @@ Below is an example wdio.conf.js configuration:
  - This service only works with HTTPS connections. Make sure the settings are all configured for HTTPS on port 443.
  - Make sure the CLOUD_CONTAINER_ACCESS_TOKEN is set correctly and matches what your server expects.
  - Make sure either CLOUD_CONTAINER_APP_URL is set, or that you've replaced that variable with the correct URL for your server.
- - Some systems require more time to warm-up. You can increase the retryTimeout and maxAttempts by passing these options into the service:
+ - Some systems require more time to warm-up than the default maxAttempts 5 and retryTimeout 6000. You can increase the retryTimeout and maxAttempts by passing these options into the service:
 
  ```
     services: [['cloud-container', {
