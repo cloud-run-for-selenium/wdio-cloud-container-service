@@ -15,7 +15,7 @@ class CloudContainerService {
     }
 
     async beforeCommand(commandName, args) {
-        if(typeof (this.options.requestIntervalTime) === 'number')
+        if(typeof (this.options.requestIntervalTime) === 'number' && this.options.requestIntervalTime > 0)
             await browser.pause(this.options.requestIntervalTime)
     }
 }
