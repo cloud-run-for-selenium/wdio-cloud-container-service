@@ -46,6 +46,17 @@ Below is an example wdio.conf.js configuration:
     }]],
 ```
 
+- In some lightweight or free services, such as Heroku's Free plan, we may hit concurrent request limits, and WebdriverIO will receive a 503 response from the platform. In the Heroku logs, these will appear as H12 errors. If you encounter these, we can reduce the request interval rate of commands sent to the WebDriver using the requestIntervalTime option, which introduces a delay, in milliseconds, between all commands:
+
+```
+    services: [['cloud-container', {
+        requestIntervalTime: 200
+    }]],
+```
+
+For instance, a requestIntervalTime of 200ms will create a 200ms delay between each command, giving the server more time to process the requests without exceeding capacity. By default, there is no delay.
+
+
 ## License
 
 Copyright 2022, James Mortensen under the MIT License
