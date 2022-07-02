@@ -12,7 +12,9 @@
     "Google Cloud Run",
     "Selenium",
     "WebDriver",
-    "health check"
+    "health check",
+    "wdio-plugin",
+    "wdio-service"
   ],
   "author": "James Mortensen",
   "license": "MIT",

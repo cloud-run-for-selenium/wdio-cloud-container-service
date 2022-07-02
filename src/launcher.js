@@ -1,7 +1,7 @@
 const wdioLogger = require('@wdio/logger').default
 const logger = wdioLogger('wdio-cloud-container-service')
 
-class CloudContainerLauncherService {
+class CloudContainerLauncher {
 
     constructor(serviceOptions, capabilities, config) {
 
@@ -11,7 +11,8 @@ class CloudContainerLauncherService {
         if (!this.options.maxAttempts)
             this.options.maxAttempts = 5
 
-        logger.warn(`initialize wdio-cloud-container-service...`)
+
+        logger.warn(`initialize wdio-cloud-container-service launcher class...`)
         this.config = config
 
         this.headersNotSpecifiedInConfig = function () {
@@ -39,9 +40,10 @@ class CloudContainerLauncherService {
             this.headers = config.headers
 
         const containerServiceRunner = require('./cloud-container-service-runner')
-        return containerServiceRunner(config, capabilities, this.options, this.headers);
+        return containerServiceRunner(config, capabilities, this.options, this.headers)
     }
 }
 
 
-module.exports = CloudContainerLauncherService;
+module.exports = CloudContainerLauncher
+
