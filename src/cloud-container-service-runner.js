@@ -9,7 +9,7 @@ module.exports = function (config, capabilities, opts, headers, _https, _process
     
     var attempts = 0;
     logger.warn('Warming up Cloud Container host at: ' + config.hostname + '...');
-    const webdriverPath = config.path === undefined ? '' : config.path;
+    const webdriverPath = config.path === undefined || config.path === '/' ? '' : config.path;
     
     return new Promise((resolve, reject) => {
         if(typeof(_hook) === 'undefined')
