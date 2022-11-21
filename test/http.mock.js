@@ -59,8 +59,13 @@ function mockRes(statusCode) {
     return res;
 }
 
+function getNumberOfRequests() {
+    return count - 1;
+}
+
 module.exports = {
     get,
     setGetterHandlers,
-    mockRes
+    mockRes,
+    getNumberOfRequests
 }

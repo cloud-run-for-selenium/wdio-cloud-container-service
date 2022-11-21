@@ -20,6 +20,7 @@ module.exports = function (config, capabilities, opts, headers, _https, _process
             _https.get(`${config.protocol}://${config.hostname}:${config.port}${webdriverPath}/status`, {
                 headers: headers
             }, res => {
+                logger.warn('Attempt ' + attempts + ' of ' + opts.maxAttempts);
                 if (++attempts > opts.maxAttempts) {
                     logger.error('Problem launching Cloud Container service. Status: ' + res.statusCode);
                     clearInterval(_hook.healthCheckInterval);
@@ -44,7 +45,8 @@ module.exports = function (config, capabilities, opts, headers, _https, _process
                 });
             }).on('error', err => {
                 logger.error('Error: ', err.message);
-                reject(err.message);
+                if(err.code !== 'ECONNRESET')
+                     reject(err.message);
             });
         }, opts.retryTimeout);
     }).catch((err) => {
